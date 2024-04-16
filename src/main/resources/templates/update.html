@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employees</title>
+    <link rel="stylesheet" href="employees.css">
+</head>
+
+
+<body>
+    <div id="div1">
+        <h1 class="tittle" th:text="'UPDATE EMPLOYEE ' + ${employeeId} + ''">Update</h1>
+
+        <form th:action="@{/update/confirm}" method="post" onsubmit="return confirm('¿Está seguro de que desea actualizar al empleado?')">
+            
+
+            <input type="hidden" name="employeeId" th:value="${employeeId}" />
+
+            <div class="inputs">
+            
+                <div class="xd">
+                    <label for="role">FIRTS NAME:</label>
+                    <input type="text" id="firstName" name="firstName" required><br>
+                </div>
+
+                <div class="xd">
+                    <label for="salary">LAST NAME:</label>
+                    <input type="text" id="lastName" name="lastName" required><br>
+                </div>
+            
+            </div>
+
+            <button type="submit">Actualizar Empleado</button>
+        </form>
+
+        
+    </div>
+</body>
+
+</html>
