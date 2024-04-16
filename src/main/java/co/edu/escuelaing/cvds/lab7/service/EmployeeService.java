@@ -11,8 +11,13 @@ import co.edu.escuelaing.cvds.lab7.repository.EmployeeRepository;
 
 @Service
 public class EmployeeService {
+
+    private final EmployeeRepository employeeRepository;
+
     @Autowired
-    EmployeeRepository employeeRepository;
+    public EmployeeService(EmployeeRepository employeeRepository) {
+        this.employeeRepository = employeeRepository;
+    }
 
     public void createEmployee(Long id, String firstName, String lastName, String role, String salary){
         Employee newEmployee = new Employee(id, firstName, lastName, role, Double.parseDouble(salary));
